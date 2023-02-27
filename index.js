@@ -40,7 +40,7 @@ function createCard(cardItem){
     addClassToElement(cardFrontElem, 'card-front')
 
     //add class to back card element 
-    addClassToElemet(cardBackElem 'card-back')
+    addClassToElemet(cardBackElem, 'card-back')
 
     //add src attribute and appropriate value to img element - back of card (25:05 mins in)
     addSrcToImageElem(cardBackElem)
