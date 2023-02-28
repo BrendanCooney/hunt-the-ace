@@ -4,6 +4,11 @@ const cardObjectDefinitions = [
     {id:3, imagePath:'/images/card-QueenDiamonds.png'},
     {id:4, imagePath:'/images/card-AceSpades.png'},
 ]
+
+const cardBackImgPath = '/images/card-back-blue.png'
+
+const cardContainerElem = document.querySelector ('.card-container')
+
 {/*
 <div class="card">
                 <div class="card-inner">
@@ -43,7 +48,36 @@ function createCard(cardItem){
     addClassToElemet(cardBackElem, 'card-back')
 
     //add src attribute and appropriate value to img element - back of card (25:05 mins in)
-    addSrcToImageElem(cardBackElem)
+    addSrcToImageElem(cardBackElem, cardBackImgPath)
+
+    //add src attribute and appropriate value to img element - front of card
+    addSrcToImageElem(cardFrontElem, cardItem.imagePath)
+
+    //assign class image to back element of back of card 
+    addClassToElement(cardBackElem, 'card-image')
+
+    //assign class image to front element of front of card 
+    addClassToElement(cardFrontElem, 'card-image')
+
+    //add front image element as child element to front card element
+    addChildElement(cardFrontElem, cardFrontImg)
+
+    //add back image element as child element to back card element
+    addChildElement(cardBackElem, cardBackImg)
+
+    //add front card element as child element to inner card element
+    addChildElement(cardInnerElem, cardFrontElem)
+
+    //add back card element as child element to inner card element
+    addChildElement(cardInnerElem, cardBackElem)
+
+    // add inner card element as child element to card element
+    addChildElement(cardElem, cardInnerElem)
+
+    // add card element as child element to appropriate grid cell *29:55
+
+
+
 
 
 
@@ -61,4 +95,18 @@ function addIdToElement(elem, id){
 }
 function addSrcToImageElem(imageElem, src){
     imageElem.src = src
+}
+function addChildElement(parentElem, childElem){
+    parentElem.appendChild(childElem)
+}
+function addCardToGridCell(card) 
+{
+
+}
+function mapCardIdToGridCell(){
+    if(card.id == 1)
+    {
+        return '.card-pos-a'
+    }
+
 }
